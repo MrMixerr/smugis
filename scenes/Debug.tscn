@@ -1,0 +1,302 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/Evil Empire.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Debug_menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 36
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[node name="Debug" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Main" type="ColorRect" parent="."]
+margin_left = 219.0
+margin_top = 95.0
+margin_right = 1120.0
+margin_bottom = 663.0
+color = Color( 0.129412, 0.129412, 0.129412, 0.305882 )
+
+[node name="Label" type="Label" parent="Main"]
+margin_left = 383.0
+margin_top = 1.0
+margin_right = 512.0
+margin_bottom = 83.0
+theme = SubResource( 2 )
+text = "DEBUG"
+align = 1
+valign = 1
+
+[node name="Coins" type="Button" parent="Main"]
+margin_left = 50.0
+margin_top = 283.0
+margin_right = 199.0
+margin_bottom = 322.0
+theme = SubResource( 4 )
+text = "coins debug"
+
+[node name="Enemy" type="Button" parent="Main"]
+margin_left = 383.0
+margin_top = 283.0
+margin_right = 532.0
+margin_bottom = 322.0
+theme = SubResource( 4 )
+text = "Enemy debug"
+
+[node name="Player" type="Button" parent="Main"]
+margin_left = 701.0
+margin_top = 283.0
+margin_right = 850.0
+margin_bottom = 322.0
+theme = SubResource( 4 )
+text = "player debug"
+
+[node name="Coins" type="ColorRect" parent="."]
+visible = false
+margin_left = 219.0
+margin_top = 95.0
+margin_right = 1120.0
+margin_bottom = 663.0
+color = Color( 0.129412, 0.129412, 0.129412, 0.278431 )
+
+[node name="Label" type="Label" parent="Coins"]
+margin_left = 347.0
+margin_top = 1.0
+margin_right = 586.0
+margin_bottom = 83.0
+theme = SubResource( 2 )
+text = "DEBUG: Coins"
+align = 1
+valign = 1
+
+[node name="Add" type="Label" parent="Coins"]
+margin_top = 139.0
+margin_right = 140.0
+margin_bottom = 221.0
+theme = SubResource( 6 )
+text = "Add: Coins"
+align = 1
+valign = 1
+
+[node name="Coins_add" type="Button" parent="Coins"]
+margin_left = 676.0
+margin_top = 163.0
+margin_right = 825.0
+margin_bottom = 202.0
+theme = SubResource( 4 )
+text = "coins add"
+
+[node name="Coins_remove" type="Button" parent="Coins"]
+margin_left = 676.0
+margin_top = 221.0
+margin_right = 825.0
+margin_bottom = 260.0
+theme = SubResource( 4 )
+text = "Coins Remove"
+
+[node name="Coins_back" type="Button" parent="Coins"]
+margin_left = 383.0
+margin_top = 493.0
+margin_right = 532.0
+margin_bottom = 532.0
+theme = SubResource( 4 )
+text = "back"
+
+[node name="Coins_text" type="TextEdit" parent="Coins"]
+margin_left = 162.0
+margin_top = 163.0
+margin_right = 662.0
+margin_bottom = 203.0
+text = "Please Put a number (100, 50, 9)"
+
+[node name="Player" type="ColorRect" parent="."]
+margin_left = 219.0
+margin_top = 95.0
+margin_right = 1120.0
+margin_bottom = 663.0
+color = Color( 0.129412, 0.129412, 0.129412, 0.278431 )
+
+[node name="Label" type="Label" parent="Player"]
+margin_left = 347.0
+margin_top = 1.0
+margin_right = 586.0
+margin_bottom = 83.0
+theme = SubResource( 2 )
+text = "DEBUG: player"
+align = 1
+valign = 1
+
+[node name="Add" type="Label" parent="Player"]
+margin_left = 17.0
+margin_top = 139.0
+margin_right = 177.0
+margin_bottom = 221.0
+theme = SubResource( 6 )
+text = "Add: health"
+align = 1
+valign = 1
+
+[node name="Add2" type="Label" parent="Player"]
+margin_left = 17.0
+margin_top = 221.0
+margin_right = 177.0
+margin_bottom = 303.0
+theme = SubResource( 6 )
+text = "Add: speed"
+align = 1
+valign = 1
+
+[node name="Add3" type="Label" parent="Player"]
+margin_left = 17.0
+margin_top = 303.0
+margin_right = 188.0
+margin_bottom = 385.0
+theme = SubResource( 6 )
+text = "Add: Bullets"
+align = 1
+valign = 1
+
+[node name="Add4" type="Label" parent="Player"]
+margin_left = 17.0
+margin_top = 373.0
+margin_right = 188.0
+margin_bottom = 455.0
+theme = SubResource( 6 )
+text = "Add: Score"
+align = 1
+valign = 1
+
+[node name="Health_add" type="Button" parent="Player"]
+margin_left = 545.0
+margin_top = 163.0
+margin_right = 694.0
+margin_bottom = 202.0
+theme = SubResource( 4 )
+text = "Heatlh add"
+
+[node name="Health_remove" type="Button" parent="Player"]
+margin_left = 701.0
+margin_top = 163.0
+margin_right = 885.0
+margin_bottom = 202.0
+theme = SubResource( 4 )
+text = "Health Remove"
+
+[node name="Speed_add" type="Button" parent="Player"]
+margin_left = 545.0
+margin_top = 241.0
+margin_right = 694.0
+margin_bottom = 280.0
+theme = SubResource( 4 )
+text = "Speed add"
+
+[node name="Speed_remove" type="Button" parent="Player"]
+margin_left = 701.0
+margin_top = 241.0
+margin_right = 885.0
+margin_bottom = 280.0
+theme = SubResource( 4 )
+text = "Speed Reset"
+
+[node name="Bullets_add" type="Button" parent="Player"]
+margin_left = 545.0
+margin_top = 322.0
+margin_right = 694.0
+margin_bottom = 361.0
+theme = SubResource( 4 )
+text = "Bullets add"
+
+[node name="Bullets_remove" type="Button" parent="Player"]
+margin_left = 701.0
+margin_top = 322.0
+margin_right = 885.0
+margin_bottom = 361.0
+theme = SubResource( 4 )
+text = "Bullets Reset"
+
+[node name="Score_add" type="Button" parent="Player"]
+margin_left = 545.0
+margin_top = 395.0
+margin_right = 694.0
+margin_bottom = 434.0
+theme = SubResource( 4 )
+text = "score add"
+
+[node name="Score_remove" type="Button" parent="Player"]
+margin_left = 701.0
+margin_top = 395.0
+margin_right = 885.0
+margin_bottom = 434.0
+theme = SubResource( 4 )
+text = "Score Reset"
+
+[node name="Health_text" type="TextEdit" parent="Player"]
+margin_left = 195.0
+margin_top = 163.0
+margin_right = 538.0
+margin_bottom = 203.0
+text = "Please Put a number (100, 50, 9)"
+
+[node name="Speed_text" type="TextEdit" parent="Player"]
+margin_left = 195.0
+margin_top = 241.0
+margin_right = 538.0
+margin_bottom = 281.0
+text = "Please Put a number (100, 50, 9)"
+
+[node name="Bullets_text" type="TextEdit" parent="Player"]
+margin_left = 195.0
+margin_top = 322.0
+margin_right = 538.0
+margin_bottom = 362.0
+text = "Please Put a number (100, 50, 9)"
+
+[node name="Score_text" type="TextEdit" parent="Player"]
+margin_left = 195.0
+margin_top = 395.0
+margin_right = 538.0
+margin_bottom = 435.0
+text = "Please Put a number (100, 50, 9)"
+
+[node name="Player_back" type="Button" parent="Player"]
+margin_left = 383.0
+margin_top = 493.0
+margin_right = 532.0
+margin_bottom = 532.0
+theme = SubResource( 4 )
+text = "back"
+
+[connection signal="pressed" from="Main/Coins" to="." method="_on_Coins_pressed"]
+[connection signal="pressed" from="Main/Enemy" to="." method="_on_Enemy_pressed"]
+[connection signal="pressed" from="Main/Player" to="." method="_on_Player_pressed"]
+[connection signal="pressed" from="Coins/Coins_add" to="." method="_on_Coins_add_pressed"]
+[connection signal="pressed" from="Coins/Coins_remove" to="." method="_on_Coins_remove_pressed"]
+[connection signal="pressed" from="Coins/Coins_back" to="." method="_on_Coins_back_pressed"]
+[connection signal="pressed" from="Player/Health_add" to="." method="_on_Health_add_pressed"]
+[connection signal="pressed" from="Player/Health_remove" to="." method="_on_Health_remove_pressed"]
+[connection signal="pressed" from="Player/Speed_add" to="." method="_on_Speed_add_pressed"]
+[connection signal="pressed" from="Player/Speed_remove" to="." method="_on_Speed_remove_pressed"]
+[connection signal="pressed" from="Player/Bullets_add" to="." method="_on_Bullets_add_pressed"]
+[connection signal="pressed" from="Player/Bullets_remove" to="." method="_on_Bullets_remove_pressed"]
+[connection signal="pressed" from="Player/Score_add" to="." method="_on_Score_add_pressed"]
+[connection signal="pressed" from="Player/Score_remove" to="." method="_on_Bullets_remove_pressed"]
+[connection signal="pressed" from="Player/Player_back" to="." method="_on_Health_back_pressed"]

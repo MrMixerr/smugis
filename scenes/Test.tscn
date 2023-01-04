@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scripts/freeplay.gd" type="Script" id=3]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 688.5, 56.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5.5, 401.75 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5.25001, 690.25 )
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1, 669, 0, 0, 0, 0, -2, 582, 0, 0, 0, 0, 141, 586, 0, 0, 0, 0, 139, 669, 0, 0, 0, 0, 785, 659, 0, 0, 0, 0, 1342, 659, 0, 0, 0, 0, 1337, 574, 0, 0, 0, 0, 789, 568, 0, 0, 0, 0, 782, 657 )
+}
+
+[node name="Test" type="Node"]
+script = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 774 )
+scale = Vector2( 0.999201, 0.986833 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 678.5, -46.5 )
+shape = SubResource( 1 )
+
+[node name="Icon" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 679, -50 )
+scale = Vector2( 21.5625, 1.8125 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 188, 627 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 683, 393 )
+
+[node name="insible_wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="insible_wall"]
+position = Vector2( -4.5, 388.5 )
+shape = SubResource( 3 )
+
+[node name="insible_wall2" type="StaticBody2D" parent="."]
+position = Vector2( 770, 0 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="insible_wall2"]
+position = Vector2( 0.249987, 91.25 )
+shape = SubResource( 4 )
+
+[node name="insible_wall3" type="StaticBody2D" parent="."]
+position = Vector2( 625, 564 )
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="insible_wall3"]
+position = Vector2( -747, 159 )
+shape = SubResource( 3 )
+
+[node name="insible_wall4" type="StaticBody2D" parent="."]
+position = Vector2( 770, 791 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="insible_wall4"]
+position = Vector2( 0.249987, 91.25 )
+shape = SubResource( 4 )
+
+[node name="spawing" type="Path2D" parent="."]
+curve = SubResource( 5 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="spawing"]
+position = Vector2( -1, 669 )
+rotation = -1.58229
+
+[node name="Timer" type="Timer" parent="spawing"]
+wait_time = 3.0
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]
+
+[connection signal="timeout" from="spawing/Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/GUI.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/BigFont.tres" type="Theme" id=2]
+[ext_resource path="res://Fonts/Evil Empire.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/Debug.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Loadup"
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Loadup = SubResource( 1 )
+
+[node name="Death" type="Label" parent="."]
+visible = false
+margin_left = 452.0
+margin_top = 211.0
+margin_right = 860.0
+margin_bottom = 316.0
+theme = SubResource( 3 )
+text = "GAME OVER"
+
+[node name="Quit" type="Button" parent="Death"]
+margin_left = 98.0
+margin_top = 146.0
+margin_right = 325.0
+margin_bottom = 205.0
+theme = ExtResource( 2 )
+text = "QUIT"
+flat = true
+
+[node name="Restart" type="Button" parent="Death"]
+margin_left = 156.0
+margin_top = 228.0
+margin_right = 272.0
+margin_bottom = 339.0
+theme = ExtResource( 2 )
+text = "RESET"
+flat = true
+
+[node name="Info" type="Control" parent="."]
+
+[node name="Health" type="Label" parent="Info"]
+margin_left = 30.0
+margin_top = 15.0
+margin_right = 323.0
+margin_bottom = 68.0
+theme = ExtResource( 2 )
+text = "ETEYTFDVWTDvb"
+
+[node name="Bullets" type="Label" parent="Info"]
+margin_left = 1067.0
+margin_top = 711.0
+margin_right = 1107.0
+margin_bottom = 764.0
+theme = ExtResource( 2 )
+text = "b"
+
+[node name="Coin" type="Label" parent="Info"]
+margin_left = 30.0
+margin_top = 83.0
+margin_right = 70.0
+margin_bottom = 136.0
+theme = ExtResource( 2 )
+text = "C"
+
+[node name="Debug" parent="." instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="Death/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Death/Restart" to="." method="_on_Restart_pressed"]

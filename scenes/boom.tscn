@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector3( -1, -5, 0 )
+damping = 2.0
+angle = 2.0
+color = Color( 1, 0.745098, 0, 1 )
+
+[node name="Particles2D" type="Particles2D"]
+amount = 50
+explosiveness = 0.22
+randomness = 0.48
+process_material = SubResource( 1 )
