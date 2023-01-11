@@ -30,7 +30,7 @@ func _on_Area2D_body_entered(body):
 func _on_Area_death_body_entered(body):
 	var random_shift = randi() % 20
 	if body.is_in_group("Bullet"):
-		GameInfo.score = GameInfo.score + 10
+		GameInfo.score = GameInfo.score + 100
 		if random_shift >= 10:
 			GameInfo.health = GameInfo.health + 1
 			GameInfo.bullets = GameInfo.bullets + 10

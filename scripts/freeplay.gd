@@ -18,7 +18,7 @@ func spawn():
 	zombie.position = spawn_area.position
 	fastcube.position = spawn_area2.position
 	if spawn_area.position == player.position:
-		spawn_area.offset = randi()
+		spawn_area.offset + 100
 	add_child(zombie)
 	if GameInfo.score >= 1000:
 		add_child(fastcube)

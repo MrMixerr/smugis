@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
-export var speed := 400
+export var speed := 200
 var player = null
-const gravity = 2000
+const gravity = 5000
 var velocity = Vector2.ZERO
+
 
 
 
@@ -25,6 +26,8 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
+		
+		$AnimationPlayer.play("Moving")
 		player = body
 
 func _on_Area_death_body_entered(body):
